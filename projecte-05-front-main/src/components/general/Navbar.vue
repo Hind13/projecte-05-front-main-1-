@@ -1,27 +1,45 @@
 <template>
-  <nav class="bg-gray-800 text-white p-4">
-    <div class="container mx-auto flex justify-between items-center">
-      <div>
-        <a href="#" class="text-2xl font-bold">Hotels Auction</a>
-      </div>
-      <ul class="flex space-x-4">
-        <RouterLink to="/" class="hover:text-gray-300">Home</RouterLink>
-        <RouterLink to="../../views/registrar.vue" class="hover:text-gray-300">Registrarse</RouterLink>
-        <RouterLink to="/.iniciarsesion.vue" class="hover:text-gray-300">Iniciar Sesión</RouterLink>
-        <RouterLink to="/.subasta.vue" class="hover:text-gray-300">Subastas</RouterLink>
-        <RouterLink to="/.puja.vue" class="hover:text-gray-300">Pujas</RouterLink>
-        <RouterLink to="/.contacto.vue" class="hover:text-gray-300">Contacto</RouterLink>
-
-      </ul>
-    </div>
+  <nav>
+    <ul>
+      <li><a href="#" @click.prevent="navigate('body')">Inicio</a></li>
+      <li><a href="#" @click.prevent="navigate('register')">Registrarse</a></li>
+      <li><a href="#" @click.prevent="navigate('login')">Iniciar Sesión</a></li>
+      <li><a href="#" @click.prevent="navigate('subasta')">Subastas</a></li>
+      <li><a href="#" @click.prevent="navigate('puja')">puja</a></li>
+    </ul>
   </nav>
 </template>
 
 <script>
 export default {
-  name: 'Navbar'
-}
+  methods: {
+    navigate(view) {
+      // Emite el evento 'navigate' al componente padre con la vista seleccionada
+      this.$emit('navigate', view);
+    },
+  },
+};
 </script>
 
 <style scoped>
+nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #007BFF;
+  cursor: pointer;
+}
+
+nav ul li a:hover {
+  color: #0056b3;
+}
 </style>

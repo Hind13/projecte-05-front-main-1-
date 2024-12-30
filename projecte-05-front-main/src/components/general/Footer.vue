@@ -6,7 +6,7 @@
         <h4>Quick Links:</h4>
           <ul class="list-unstyled">
             <li><a href="../../views/registrar.vue">Registrarse</a></li>
-            <li><a href="iniciar.vue">Iniciar sesión</a></li>
+            <li><a href="../../views/Iniciarsesion.vue">Iniciar sesión</a></li>
             <li><a href="subasta.vue">Subastas</a></li>
             <li><a href="puja.vue">Pujas</a></li>
             <li><a href="contacto.vue">Contacto</a></li>
